@@ -1,27 +1,32 @@
 # ProyectoParcial2VG
  
-#Diseño.
+##Diseño.
+
 Manuel Ernesto Alvarez.
 German Adrian Anguiano.
 
-#Programación.
+##Programación.
+
 David Arturo Preciado Osuna.
 Manuel Ernesto Alvarez Figueroa.
 
-#Modelado.
+##Modelado.
+
 Francisco Javier Contreras.
 Eduardo Antolin Jimenez.
 Angel Ivan Castillo Esquer.
 
-#Texturizado y Shading.
+##Texturizado y Shading.
+
 Jose Ruben Bojorquez Osuna.
 
-#Graficos y UI.
+##Graficos y UI.
+
 Claudia Arlette.
 German Adrian Anguiano.
 
 
-#La idea principal está basada en estos artículos.
+##La idea principal está basada en estos artículos.
 
 Mineralogy of a Mudstone at Yellowknife Bay, Gale Crater, Mars | Science (sciencemag.org)
 
@@ -43,7 +48,7 @@ El rover será controlado en vista de tercera persona y se traslada a distintos 
 Al acercarse a un punto en específico un panel aparecerá en frente del rover, mostrando alguna información (con texto,imágenes o hasta incluso un modelo 3d), mostrando información varia como el cráter glacier, el principal lugar de investigación, cómo se comunica un rover o el proposito detras de la exploración.
 
 
-#Herramientas utilizadas.
+##Herramientas utilizadas.
 
 Unity.
 Maya.
@@ -51,7 +56,7 @@ Blender.
 Photoshop.
 Illustrator.
 
-#Detalles Técnicos.
+##Detalles Técnicos.
 
 Input System para la implementación de joystick y teclado/mouse.
 
