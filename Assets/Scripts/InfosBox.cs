@@ -22,8 +22,7 @@ public class InfosBox : MonoBehaviour
 
     float distancia;
 
-    [SerializeField]
-    Transform aux;
+
 
     public void StartTalking()
     {
@@ -62,10 +61,5 @@ public class InfosBox : MonoBehaviour
         descripcion.text = zona.description;
     }
 
-    void Update()
-    {
-        distancia = Vector3.Distance(transform.position,aux.position);
-       // Debug.Log(distancia);
-    }
     
 }

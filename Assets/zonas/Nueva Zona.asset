@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97806ea4652be1b4b98cab6df979427e, type: 3}
   m_Name: Nueva Zona
   m_EditorClassIdentifier: 
-  titulo: Zona2
-  description: mi kbzona
+  titulo: Titulo in poco extenso
+  description: ' sdasdas dsadasdas dasdas dsad asdasdasdas dasd sa dasdsadasd asdawdawdawdawdawdawd
+    aw dwad awd awdawdwadawdawdawdwaeqwewaeaweaweaweaweaweaweaweaweaweaweaweaweaweaweaweaweawe
+    wd wdawd wadwad wad wadwad wadw dw dwd wdw dwdw dw wd wdw sd sds dsds ds dsds
+    dsds d sds ds d'
   image: {fileID: 21300000, guid: cdc999b011cf4db4bb0d057c0cddf0d6, type: 3}

@@ -17,6 +17,9 @@ public class Waypoint : MonoBehaviour
     [SerializeField]
      Vector3 offset;
 
+    [SerializeField]
+    Text text;
+
     private void Update()
     {
         float minX = img.GetPixelAdjustedRect().width / 2;
@@ -43,5 +46,7 @@ public class Waypoint : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
         img.transform.position = pos;
+
+        text.text = ((int)Vector3.Distance(target.position, transform.position)).ToString() + "m";
     }
 }
