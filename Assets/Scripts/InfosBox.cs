@@ -32,6 +32,9 @@ public class InfosBox : MonoBehaviour
 
 [SerializeField]
     GameObject[] pointers;
+
+[SerializeField]
+GameObject singlepointer;
     public void StartTalking()
     {
         Destroy(muestra);
@@ -66,6 +69,8 @@ public class InfosBox : MonoBehaviour
             {
                 pointers[i].SetActive(true);
             }
+            Destroy(singlepointer);
+
     }
 
 
@@ -84,7 +89,7 @@ public class InfosBox : MonoBehaviour
             StopTalking();
         }
 
-        
+
 
 
     }

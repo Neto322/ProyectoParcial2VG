@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2720423560980553181}
   - component: {fileID: 1328343387653689976}
   - component: {fileID: 3858404057157117618}
-  - component: {fileID: 3827933444696703374}
+  - component: {fileID: 5653389567379274289}
   m_Layer: 0
   m_Name: SateliteTexturizado
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3827933444696703374
+--- !u!114 &5653389567379274289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3353829856409880423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ded1d794bf476f448bcc6c7ebd65d90, type: 3}
+  m_Script: {fileID: 11500000, guid: 013dc8c998cc67b41ae0a9a7755de5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

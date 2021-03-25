@@ -17,7 +17,6 @@ MonoBehaviour:
     Gale en Marte como parte de la misi\xF3n del Laboratorio cient\xEDfico de Marte
     (MSL) de la NASA. El 6 de agosto de 2012, la llegada del rover curiosity a la
     superficie de Marte entreg\xF3 el laboratorio de geoqu\xEDmica t\xE9cnicamente
-    m\xE1s avanzado jam\xE1s enviado a la superficie de otro planeta y estudiar el
-    suelo y minerales en la busqueda de vida."
+    m\xE1s avanzado jam\xE1s enviado a la superficie de otro planeta para su estudio."
   image: {fileID: 21300000, guid: 4f3ea328da8f19547ba95f7c9804f90e, type: 3}
   Model: {fileID: 243175162720112794, guid: 6bd0c1339d6ae0d45968bb3ac211e7df, type: 3}
