@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mostrador : MonoBehaviour
+public class ObjetoMuestra : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,10 @@ public class Mostrador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * 30 * Time.deltaTime);
+        
+    }
+
+    private void OnTriggerStay(Collider other) {
+        Destroy(gameObject);    
     }
 }

@@ -24,10 +24,13 @@ public class InfosBox : MonoBehaviour
     [SerializeField]
     GameObject Video;
 
+    [SerializeField]
+    Transform cam;
 
-
+    GameObject muestra;
     public void StartTalking()
     {
+        Destroy(muestra);
         infoBox.gameObject.SetActive(true);
         Video.gameObject.SetActive(true);
         Debug.Log("colision player");
@@ -35,14 +38,22 @@ public class InfosBox : MonoBehaviour
         titulo.text = zona.titulo;
         descripcion.text = zona.description;
 
+        muestra = Instantiate(zona.Model,zona.Model.transform.position,zona.Model.transform.rotation);
+        
+
         
 
     }
+
+
+
+
+
     public void StopTalking()
     {
         infoBox.gameObject.SetActive(false);
         Video.gameObject.SetActive(false);
-
+        
     }
 
 
@@ -59,7 +70,12 @@ public class InfosBox : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             StopTalking();
+            Destroy(muestra);
         }
+
+        
+
+
     }
      void Start()
     {
