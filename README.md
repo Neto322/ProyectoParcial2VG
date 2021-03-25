@@ -1,32 +1,32 @@
 # ProyectoParcial2VG
  
-##Diseño.
+# Diseño.
 
 Manuel Ernesto Alvarez.
 German Adrian Anguiano.
 
-##Programación.
+# Programación.
 
 David Arturo Preciado Osuna.
 Manuel Ernesto Alvarez Figueroa.
 
-##Modelado.
+# Modelado.
 
 Francisco Javier Contreras.
 Eduardo Antolin Jimenez.
 Angel Ivan Castillo Esquer.
 
-##Texturizado y Shading.
+# Texturizado y Shading.
 
 Jose Ruben Bojorquez Osuna.
 
-##Graficos y UI.
+# Graficos y UI.
 
 Claudia Arlette.
 German Adrian Anguiano.
 
 
-##La idea principal está basada en estos artículos.
+# La idea principal está basada en estos artículos.
 
 Mineralogy of a Mudstone at Yellowknife Bay, Gale Crater, Mars | Science (sciencemag.org)
 
