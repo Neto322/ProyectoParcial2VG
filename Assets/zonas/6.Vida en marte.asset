@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97806ea4652be1b4b98cab6df979427e, type: 3}
+  m_Name: 6.Vida en marte
+  m_EditorClassIdentifier: 
+  titulo: 'Vida En Marte? '
+  description: "El objetivo principal de la misi\xF3n del rover Curiosity de la NASA
+    es explorar y evaluar cuantitativamente una regi\xF3n local en la superficie
+    de Marte como un h\xE1bitat potencial para la vida pasada o presente. El cr\xE1ter
+    Gale en Marte fue una vez un lago alimentado por r\xEDos y aguas subterr\xE1neas
+    pero eso requiere de una atmosfera.Los resultados ayudar\xE1n a nuestra comprensi\xF3n
+    de d\xF3nde y cu\xE1ndo Marte fue habitable alguna vez."
+  image: {fileID: 21300000, guid: c7921d7589387f94dabb5521b500ba13, type: 3}
+  Model: {fileID: 8693247352992439452, guid: bf184fec1a653c948b9a96569568ef65, type: 3}

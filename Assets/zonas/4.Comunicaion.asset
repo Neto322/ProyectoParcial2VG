@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97806ea4652be1b4b98cab6df979427e, type: 3}
+  m_Name: 4.Comunicaion
+  m_EditorClassIdentifier: 
+  titulo: Comunicaciones
+  description: "El rover env\xEDa im\xE1genes, junto con datos de instrumentos y
+    analisis , de vuelta a sus jefes de la Tierra, Los cient\xEDficos env\xEDan comandos
+    al rover durante el tiempo limitado de tres horas de comunicaci\xF3n directa
+    con la antena. El rover est\xE1 entonces por su cuenta durante 20 horas, llevando
+    a cabo comandos enviados. por los cientificos, con el tiempo la distancia y la
+    bateria hace mas difcil la comunicacion."
+  image: {fileID: 21300000, guid: b896afcae2101d64a9d96b7d54511782, type: 3}
+  Model: {fileID: 832010222725164634, guid: 48f7054214ff3454a8021fa6d9dac38f, type: 3}

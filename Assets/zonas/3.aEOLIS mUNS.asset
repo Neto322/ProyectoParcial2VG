@@ -15,7 +15,7 @@ MonoBehaviour:
   titulo: Aeolis  Muns
   description: "Aeolis Mons es una monta\xF1a en el planeta Marte. Forma el pico
     central en el cr\xE1ter Gale,  su nombre significa \"Mount Sharp\"(Monte Afilado)
-    , con una altura de 5km, es el sitio preferido de exploracion del Curiosity por
-    su antiguedad y variedad de materiales. "
-  image: {fileID: 21300000, guid: 43759680743e06e4fa889d361236dd07, type: 3}
+    , con una altura de 5.5km, y una edad estimada de 2500 a\xF1os es el sitio preferido
+    de exploracion del Curiosity por su antiguedad y variedad de materiales. "
+  image: {fileID: 21300000, guid: 5cec98f1407c09d439f9157bc60047ba, type: 3}
   Model: {fileID: 4785479326689277609, guid: 83e73f89c852beb46a70d1560b0c5041, type: 3}

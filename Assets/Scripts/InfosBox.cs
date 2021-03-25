@@ -28,6 +28,10 @@ public class InfosBox : MonoBehaviour
     Transform cam;
 
     GameObject muestra;
+
+
+[SerializeField]
+    GameObject[] pointers;
     public void StartTalking()
     {
         Destroy(muestra);
@@ -39,7 +43,10 @@ public class InfosBox : MonoBehaviour
         descripcion.text = zona.description;
 
         muestra = Instantiate(zona.Model,zona.Model.transform.position,zona.Model.transform.rotation);
-        
+        for(int i = 0; i < pointers.Length;i++)
+            {
+                pointers[i].SetActive(false);
+            }
 
         
 
@@ -50,10 +57,15 @@ public class InfosBox : MonoBehaviour
 
 
     public void StopTalking()
-    {
+    {            
+        Destroy(muestra);
         infoBox.gameObject.SetActive(false);
         Video.gameObject.SetActive(false);
         
+            for(int i = 0; i < pointers.Length;i++)
+            {
+                pointers[i].SetActive(true);
+            }
     }
 
 
@@ -70,7 +82,6 @@ public class InfosBox : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             StopTalking();
-            Destroy(muestra);
         }
 
         
