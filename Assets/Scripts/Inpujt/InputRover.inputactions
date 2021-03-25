@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Interact",
+                    "name": "Back",
                     "type": "Button",
                     "id": "02f53ae0-0e5e-4916-bb8f-96a856e2122e",
                     "expectedControlType": "Button",
@@ -130,11 +130,22 @@
                 {
                     "name": "",
                     "id": "bb1eadd8-e80e-4c99-bd99-94e32ac5b57f",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Interact",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4164b3bd-f4e8-4608-b43b-d3be9b0d191e",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pc",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

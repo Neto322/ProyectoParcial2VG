@@ -130,4 +130,8 @@ public class RoverController : MonoBehaviour
         }
       
     }
+
+     void OnTriggerStay(Collider other) {
+         
+    }
 }

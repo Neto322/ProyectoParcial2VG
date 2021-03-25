@@ -35,6 +35,9 @@ public class InfosBox : MonoBehaviour
 
 [SerializeField]
 GameObject singlepointer;
+
+[SerializeField]
+GameObject seleccion;
     public void StartTalking()
     {
         Destroy(muestra);
@@ -54,7 +57,6 @@ GameObject singlepointer;
         
 
     }
-
 
 
 
@@ -80,6 +82,8 @@ GameObject singlepointer;
         {
             StartTalking();
         }
+
+        seleccion.SetActive(true);
     }
 
     void OnTriggerExit(Collider other)
@@ -88,6 +92,7 @@ GameObject singlepointer;
         {
             StopTalking();
         }
+        seleccion.SetActive(false);
 
 
 
@@ -98,7 +103,10 @@ GameObject singlepointer;
         imagen.sprite = zona.image;
         titulo.text = zona.titulo;
         descripcion.text = zona.description;
+        seleccion.SetActive(false);
+
     }
 
+  
     
 }

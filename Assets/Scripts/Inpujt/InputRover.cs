@@ -35,7 +35,7 @@ public class @InputRover : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Back"",
                     ""type"": ""Button"",
                     ""id"": ""02f53ae0-0e5e-4916-bb8f-96a856e2122e"",
                     ""expectedControlType"": ""Button"",
@@ -143,11 +143,22 @@ public class @InputRover : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bb1eadd8-e80e-4c99-bd99-94e32ac5b57f"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
-                    ""action"": ""Interact"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4164b3bd-f4e8-4608-b43b-d3be9b0d191e"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pc"",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -298,7 +309,7 @@ public class @InputRover : IInputActionCollection, IDisposable
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_Look = m_Move.FindAction("Look", throwIfNotFound: true);
         m_Move_Reset = m_Move.FindAction("Reset", throwIfNotFound: true);
-        m_Move_Interact = m_Move.FindAction("Interact", throwIfNotFound: true);
+        m_Move_Back = m_Move.FindAction("Back", throwIfNotFound: true);
         m_Move_Movement = m_Move.FindAction("Movement", throwIfNotFound: true);
     }
 
@@ -351,7 +362,7 @@ public class @InputRover : IInputActionCollection, IDisposable
     private IMoveActions m_MoveActionsCallbackInterface;
     private readonly InputAction m_Move_Look;
     private readonly InputAction m_Move_Reset;
-    private readonly InputAction m_Move_Interact;
+    private readonly InputAction m_Move_Back;
     private readonly InputAction m_Move_Movement;
     public struct MoveActions
     {
@@ -359,7 +370,7 @@ public class @InputRover : IInputActionCollection, IDisposable
         public MoveActions(@InputRover wrapper) { m_Wrapper = wrapper; }
         public InputAction @Look => m_Wrapper.m_Move_Look;
         public InputAction @Reset => m_Wrapper.m_Move_Reset;
-        public InputAction @Interact => m_Wrapper.m_Move_Interact;
+        public InputAction @Back => m_Wrapper.m_Move_Back;
         public InputAction @Movement => m_Wrapper.m_Move_Movement;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
@@ -376,9 +387,9 @@ public class @InputRover : IInputActionCollection, IDisposable
                 @Reset.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnReset;
-                @Interact.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnInteract;
-                @Interact.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnInteract;
-                @Interact.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnInteract;
+                @Back.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnBack;
                 @Movement.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnMovement;
@@ -392,9 +403,9 @@ public class @InputRover : IInputActionCollection, IDisposable
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
@@ -424,7 +435,7 @@ public class @InputRover : IInputActionCollection, IDisposable
     {
         void OnLook(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
     }
 }
