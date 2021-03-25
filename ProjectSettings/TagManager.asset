@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Adorno
+  - Zona
   layers:
   - Default
   - TransparentFX

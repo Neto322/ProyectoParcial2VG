@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum Axel
 {
@@ -45,6 +46,14 @@ public class RoverController : MonoBehaviour
     [SerializeField]
     float MaxSpeed;
 
+    [SerializeField]
+    GameObject button;
+
+
+
+    [SerializeField]
+    GameObject infoBox;
+    
     private void Awake() {
        
         inputActions = new InputRover();
@@ -85,6 +94,8 @@ public class RoverController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
+
+       
     }
 
     private void LateUpdate() {
@@ -131,7 +142,8 @@ public class RoverController : MonoBehaviour
       
     }
 
-     void OnTriggerStay(Collider other) {
-         
-    }
+ 
+   
+
+    
 }

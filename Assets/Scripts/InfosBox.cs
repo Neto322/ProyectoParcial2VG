@@ -36,14 +36,12 @@ public class InfosBox : MonoBehaviour
 [SerializeField]
 GameObject singlepointer;
 
-[SerializeField]
-GameObject seleccion;
+
     public void StartTalking()
     {
         Destroy(muestra);
         infoBox.gameObject.SetActive(true);
         Video.gameObject.SetActive(true);
-        Debug.Log("colision player");
         imagen.sprite = zona.image;
         titulo.text = zona.titulo;
         descripcion.text = zona.description;
@@ -83,7 +81,6 @@ GameObject seleccion;
             StartTalking();
         }
 
-        seleccion.SetActive(true);
     }
 
     void OnTriggerExit(Collider other)
@@ -92,7 +89,6 @@ GameObject seleccion;
         {
             StopTalking();
         }
-        seleccion.SetActive(false);
 
 
 
@@ -103,7 +99,6 @@ GameObject seleccion;
         imagen.sprite = zona.image;
         titulo.text = zona.titulo;
         descripcion.text = zona.description;
-        seleccion.SetActive(false);
 
     }
 
