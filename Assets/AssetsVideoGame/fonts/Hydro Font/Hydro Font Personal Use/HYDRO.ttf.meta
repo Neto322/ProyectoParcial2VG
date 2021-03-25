@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 0ed467eead363014ea969fef726cf560
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - HYDRO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2c0d46ff52bdbaf4dacd86c76748de3c, type: 3}
+  - {fileID: 12800000, guid: 3d7fb50350cec3c449fbacc5ebc5e8aa, type: 3}
+  - {fileID: 12800000, guid: 62708dc0b91b28242b6fb695775ac6dc, type: 3}
+  - {fileID: 12800000, guid: 2561cbec1beec3349b87e8d556a8e196, type: 3}
+  - {fileID: 12800000, guid: 0abce0d680fd3804fac6be077f2107a1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
