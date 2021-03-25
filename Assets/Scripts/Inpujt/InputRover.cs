@@ -33,6 +33,22 @@ public class @InputRover : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""218370a8-6641-45f6-a66f-1ca9af36ccbd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""02f53ae0-0e5e-4916-bb8f-96a856e2122e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -145,6 +161,28 @@ public class @InputRover : IInputActionCollection, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""505c3c2e-debf-446e-9e96-0d77eca32f8e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb1eadd8-e80e-4c99-bd99-94e32ac5b57f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -167,6 +205,8 @@ public class @InputRover : IInputActionCollection, IDisposable
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_Movement = m_Move.FindAction("Movement", throwIfNotFound: true);
         m_Move_Look = m_Move.FindAction("Look", throwIfNotFound: true);
+        m_Move_Reset = m_Move.FindAction("Reset", throwIfNotFound: true);
+        m_Move_Interact = m_Move.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -218,12 +258,16 @@ public class @InputRover : IInputActionCollection, IDisposable
     private IMoveActions m_MoveActionsCallbackInterface;
     private readonly InputAction m_Move_Movement;
     private readonly InputAction m_Move_Look;
+    private readonly InputAction m_Move_Reset;
+    private readonly InputAction m_Move_Interact;
     public struct MoveActions
     {
         private @InputRover m_Wrapper;
         public MoveActions(@InputRover wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Move_Movement;
         public InputAction @Look => m_Wrapper.m_Move_Look;
+        public InputAction @Reset => m_Wrapper.m_Move_Reset;
+        public InputAction @Interact => m_Wrapper.m_Move_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -239,6 +283,12 @@ public class @InputRover : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnLook;
+                @Reset.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnReset;
+                @Reset.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnReset;
+                @Reset.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnReset;
+                @Interact.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_MoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -249,6 +299,12 @@ public class @InputRover : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Reset.started += instance.OnReset;
+                @Reset.performed += instance.OnReset;
+                @Reset.canceled += instance.OnReset;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -266,5 +322,7 @@ public class @InputRover : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

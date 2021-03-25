@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum Axel
 {
@@ -77,6 +78,11 @@ public class RoverController : MonoBehaviour
         if(rb.velocity.magnitude > MaxSpeed)
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity,MaxSpeed);
+        }
+
+        if(inputActions.Move.Reset.triggered)
+        {
+            SceneManager.LoadScene(0);
         }
 
     }
