@@ -25,6 +25,14 @@ public class @InputRover : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""e9ff711c-84ad-4f8e-a41f-aeb872533a09"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -82,6 +90,61 @@ public class @InputRover : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""801d100d-a2dd-43ad-b383-f0b97055b274"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""85643733-7d92-4d99-bd21-db07530a6da7"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""d3b71842-4582-4706-bde5-2ff6ad0d2a3b"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2da238f4-2c21-4d3e-9a82-cb4fdd632ba9"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""cafcd0c8-165a-4846-92e7-3d7fb2f3ef1b"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -103,6 +166,7 @@ public class @InputRover : IInputActionCollection, IDisposable
         // Move
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_Movement = m_Move.FindAction("Movement", throwIfNotFound: true);
+        m_Move_Look = m_Move.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -153,11 +217,13 @@ public class @InputRover : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Move;
     private IMoveActions m_MoveActionsCallbackInterface;
     private readonly InputAction m_Move_Movement;
+    private readonly InputAction m_Move_Look;
     public struct MoveActions
     {
         private @InputRover m_Wrapper;
         public MoveActions(@InputRover wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Move_Movement;
+        public InputAction @Look => m_Wrapper.m_Move_Look;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -170,6 +236,9 @@ public class @InputRover : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnMovement;
+                @Look.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_MoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -177,6 +246,9 @@ public class @InputRover : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -193,5 +265,6 @@ public class @InputRover : IInputActionCollection, IDisposable
     public interface IMoveActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }

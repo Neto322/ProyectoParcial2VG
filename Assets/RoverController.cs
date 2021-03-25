@@ -38,9 +38,19 @@ public class RoverController : MonoBehaviour
 
     InputRover inputActions;
 
+    [SerializeField]
+    GameObject _centerofmass;
+
+    [SerializeField]
+    float MaxSpeed;
+
     private void Awake() {
        
         inputActions = new InputRover();
+
+        rb = GetComponent<Rigidbody>();
+
+        rb.centerOfMass = _centerofmass.transform.localPosition;
     }
 
     private void OnEnable() {
@@ -63,6 +73,13 @@ public class RoverController : MonoBehaviour
         Move();
         Turn();
         WheelAnimation();
+
+        if(rb.velocity.magnitude > MaxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity,MaxSpeed);
+        }
+
+        Debug.Log(rb.velocity.magnitude);
     }
 
     private void LateUpdate() {
