@@ -20,22 +20,29 @@ public class InfosBox : MonoBehaviour
     [SerializeField]
     Text descripcion;
 
-    float distancia;
+
+    [SerializeField]
+    GameObject Video;
 
 
 
     public void StartTalking()
     {
         infoBox.gameObject.SetActive(true);
+        Video.gameObject.SetActive(true);
         Debug.Log("colision player");
         imagen.sprite = zona.image;
         titulo.text = zona.titulo;
         descripcion.text = zona.description;
 
+        
+
     }
     public void StopTalking()
     {
         infoBox.gameObject.SetActive(false);
+        Video.gameObject.SetActive(false);
+
     }
 
 

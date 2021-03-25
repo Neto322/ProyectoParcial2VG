@@ -13,4 +13,7 @@ public class Zona : ScriptableObject
 
     [SerializeField]
     public Sprite image;
+
+    [SerializeField]
+    public GameObject Model;
 }
